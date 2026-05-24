@@ -96,6 +96,150 @@ nav{background:var(--bleu);padding:0 1.5rem;display:flex;align-items:center;just
 .cat-boisson{background:#F1F8E9;color:#33691E}
 .cat-collecte{background:#E3F2FD;color:#0D47A1}
 .cat-luxe{background:#FFF3E0;color:#BF360C}
+.cat-dechets{background:#E8F5E9;color:#1B5E20}
+/* Particuliers */
+.part-wrap{padding:32px 2rem;max-width:1100px;margin:0 auto}
+.part-hero{background:linear-gradient(135deg,#FF8A65,#e07755);border-radius:20px;padding:36px;color:#fff;margin-bottom:32px;position:relative;overflow:hidden}
+.part-hero::after{content:'🚚';position:absolute;right:30px;top:50%;transform:translateY(-50%);font-size:80px;opacity:0.15}
+.part-hero h2{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;margin-bottom:8px}
+.part-hero p{font-size:15px;opacity:0.9;max-width:520px;line-height:1.6;margin-bottom:20px}
+.part-hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-part-post{background:#fff;color:#e07755;border:none;padding:12px 24px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif}
+.btn-part-browse{background:rgba(255,255,255,0.2);color:#fff;border:2px solid rgba(255,255,255,0.5);padding:12px 24px;border-radius:10px;font-size:15px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif}
+.part-cats{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+.part-cat-btn{background:#fff;border:2px solid var(--border);border-radius:12px;padding:12px 16px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--text);transition:all 0.2s;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:90px}
+.part-cat-btn:hover,.part-cat-btn.active{border-color:#FF8A65;background:#FFF3EE;color:#e07755}
+.part-cat-btn span:first-child{font-size:26px}
+.part-annonces{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:32px}
+.annonce-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px;transition:all 0.2s}
+.annonce-card:hover{border-color:#FF8A65;box-shadow:0 4px 16px rgba(255,138,101,0.12);transform:translateY(-2px)}
+.annonce-card.urgent{border-color:#D32F2F;border-width:2px}
+.annonce-badge-urgent{font-size:11px;background:#FFEBEE;color:#D32F2F;padding:3px 10px;border-radius:20px;font-weight:600;display:inline-block;margin-bottom:10px}
+.annonce-badge-new{font-size:11px;background:#FFF3EE;color:#e07755;padding:3px 10px;border-radius:20px;font-weight:600;display:inline-block;margin-bottom:10px}
+.annonce-titre{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--bleu);margin-bottom:4px}
+.annonce-lieu{font-size:13px;color:var(--gris2);margin-bottom:12px;display:flex;align-items:center;gap:5px}
+.annonce-desc{font-size:13px;color:#555;line-height:1.6;margin-bottom:14px}
+.annonce-details{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.annonce-tag{background:var(--gris);color:var(--text);padding:4px 10px;border-radius:20px;font-size:12px;font-weight:500}
+.annonce-prix{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#FF8A65;margin-bottom:14px}
+.annonce-prix small{font-size:12px;color:var(--gris2);font-weight:400;font-family:'DM Sans',sans-serif}
+.annonce-footer{display:flex;align-items:center;justify-content:space-between}
+.annonce-auteur{font-size:12px;color:var(--gris2);display:flex;align-items:center;gap:6px}
+.annonce-avatar{width:28px;height:28px;border-radius:50%;background:var(--bleu-clair);color:var(--bleu);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.btn-repondre{background:#FF8A65;color:#fff;border:none;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif}
+.btn-repondre:hover{background:#e07755}
+/* Modal répondre */
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:3000;align-items:center;justify-content:center;padding:16px}
+.modal-overlay.show{display:flex}
+.modal-box{background:#fff;border-radius:20px;padding:32px;width:100%;max-width:460px;position:relative;animation:modalIn 0.2s ease}
+@keyframes modalIn{from{transform:scale(0.92);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--gris2)}
+.modal-box h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--bleu);margin-bottom:4px}
+.modal-annonce-titre{font-size:13px;color:var(--gris2);margin-bottom:20px;font-style:italic}
+.modal-contact-options{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.modal-contact-btn{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:12px;border:2px solid var(--border);background:#fff;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;text-align:left}
+.modal-contact-btn:hover{border-color:#FF8A65;background:#FFF3EE}
+.modal-contact-btn .mc-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.modal-contact-btn .mc-icon.tel{background:#E8F5E9}
+.modal-contact-btn .mc-icon.sms{background:#E3F2FD}
+.modal-contact-btn .mc-icon.email{background:#FFF8E1}
+.modal-contact-btn .mc-icon.whatsapp{background:#E8F5E9}
+.modal-contact-btn strong{display:block;font-size:14px;font-weight:600;color:var(--text)}
+.modal-contact-btn span{font-size:12px;color:var(--gris2)}
+.modal-divider{text-align:center;color:var(--gris2);font-size:13px;margin:4px 0;position:relative}
+.modal-divider::before,.modal-divider::after{content:'';position:absolute;top:50%;width:42%;height:1px;background:var(--border)}
+.modal-divider::before{left:0}.modal-divider::after{right:0}
+.modal-msg-form{display:flex;flex-direction:column;gap:10px}
+.modal-msg-form textarea{padding:12px;border:1.5px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;resize:none;outline:none}
+.modal-msg-form textarea:focus{border-color:#FF8A65}
+.modal-msg-form input{padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none}
+.modal-msg-form input:focus{border-color:#FF8A65}
+.btn-envoyer-msg{background:#FF8A65;color:#fff;border:none;padding:12px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%}
+.btn-envoyer-msg:hover{background:#e07755}
+/* Formulaire dépôt annonce */
+.part-form-wrap{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:24px;display:none}
+.part-form-wrap.show{display:block}
+.part-form-wrap h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--bleu);margin-bottom:6px}
+.part-form-wrap p{color:var(--gris2);font-size:14px;margin-bottom:24px}
+.part-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.part-form-full{grid-column:1/-1}
+.part-cat-select{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:4px}
+.part-cat-option{background:var(--gris);border:2px solid transparent;border-radius:10px;padding:10px 8px;cursor:pointer;font-size:12px;font-weight:500;text-align:center;transition:all 0.2s}
+.part-cat-option:hover,.part-cat-option.selected{border-color:#FF8A65;background:#FFF3EE;color:#e07755}
+.part-cat-option span{display:block;font-size:22px;margin-bottom:4px}
+.prix-suggestion{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.prix-chip{background:var(--bleu-clair);color:var(--bleu);padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+.prix-chip:hover{background:var(--bleu);color:#fff}
+@media(max-width:700px){.part-form-grid{grid-template-columns:1fr}.part-cat-select{grid-template-columns:repeat(3,1fr)}.part-cats{gap:6px}.part-cat-btn{min-width:70px;padding:8px 10px}}
+/* Photos upload */
+.photo-upload-zone{border:2px dashed var(--border);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:all 0.2s;background:#fafafa;margin-top:4px}
+.photo-upload-zone:hover{border-color:#FF8A65;background:#FFF3EE}
+.photo-upload-zone p{font-size:13px;color:var(--gris2);margin-top:6px}
+.photo-upload-zone .upload-icon{font-size:32px}
+.photos-preview{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.photo-thumb{width:80px;height:80px;object-fit:cover;border-radius:8px;border:2px solid var(--border);cursor:pointer;position:relative}
+.photo-thumb-wrap{position:relative;display:inline-block}
+.photo-del{position:absolute;top:-6px;right:-6px;background:#D32F2F;color:#fff;border:none;border-radius:50%;width:20px;height:20px;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+.annonce-photos{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.annonce-photo{width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid var(--border);cursor:pointer}
+/* Lightbox */
+.lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.9);z-index:4000;align-items:center;justify-content:center}
+.lightbox.show{display:flex}
+.lightbox img{max-width:90vw;max-height:90vh;border-radius:8px}
+.lightbox-close{position:absolute;top:16px;right:20px;color:#fff;font-size:32px;cursor:pointer;background:none;border:none}
+/* Facture */
+.fact-wrap{padding:32px 2rem;max-width:900px;margin:0 auto}
+.fact-header-section{background:linear-gradient(135deg,var(--bleu),#0d2347);border-radius:20px;padding:32px;color:#fff;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.fact-header-section h2{font-family:'Syne',sans-serif;font-size:24px;font-weight:800}
+.fact-header-section p{opacity:0.8;font-size:14px;margin-top:4px}
+.fact-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-fact-action{padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;border:none}
+.btn-fact-print{background:#FF8A65;color:#fff}
+.btn-fact-new{background:rgba(255,255,255,0.15);color:#fff;border:1.5px solid rgba(255,255,255,0.4)!important;border:none}
+.fact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.fact-section{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px}
+.fact-section h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--bleu);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.fact-field{margin-bottom:12px}
+.fact-field label{display:block;font-size:11px;font-weight:600;color:var(--gris2);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.fact-field input,.fact-field select,.fact-field textarea{width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border 0.2s}
+.fact-field input:focus,.fact-field select:focus,.fact-field textarea:focus{border-color:var(--bleu)}
+.fact-lignes{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:20px}
+.fact-lignes h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--bleu);margin-bottom:14px}
+.fact-ligne-header{display:grid;grid-template-columns:3fr 1fr 1fr 1fr 36px;gap:8px;font-size:11px;font-weight:600;color:var(--gris2);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;padding:0 4px}
+.fact-ligne{display:grid;grid-template-columns:3fr 1fr 1fr 1fr 36px;gap:8px;margin-bottom:8px;align-items:center}
+.fact-ligne input{padding:8px 10px;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;width:100%}
+.fact-ligne input:focus{border-color:var(--bleu)}
+.fact-ligne-total{padding:8px 10px;font-size:13px;font-weight:600;color:var(--bleu);background:var(--bleu-clair);border-radius:8px;text-align:center}
+.btn-add-ligne{background:none;border:1.5px dashed var(--border);color:var(--gris2);padding:8px 16px;border-radius:8px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%;margin-top:4px;transition:all 0.2s}
+.btn-add-ligne:hover{border-color:var(--bleu);color:var(--bleu)}
+.btn-del-ligne{background:none;border:none;color:#D32F2F;font-size:18px;cursor:pointer;padding:4px}
+.fact-totaux{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:20px}
+.fact-total-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:14px;border-bottom:1px solid var(--border)}
+.fact-total-row:last-child{border-bottom:none;font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--bleu);padding-top:12px}
+.fact-total-row label{color:var(--gris2)}
+.fact-total-row.tva-row{display:flex;gap:8px;align-items:center}
+.tva-select{padding:5px 10px;border:1.5px solid var(--border);border-radius:6px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none}
+/* Preview facture imprimable */
+.fact-preview{background:#fff;border:1px solid var(--border);border-radius:14px;padding:32px;margin-bottom:20px}
+.fact-preview-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:3px solid var(--bleu)}
+.fact-preview-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--bleu)}
+.fact-preview-logo span{color:#FF8A65}
+.fact-preview-num{text-align:right;font-size:13px;color:var(--gris2)}
+.fact-preview-num strong{display:block;font-family:'Syne',sans-serif;font-size:18px;color:var(--bleu);font-weight:700}
+.fact-parties{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.fact-partie h4{font-size:11px;font-weight:600;color:var(--gris2);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+.fact-partie p{font-size:13px;line-height:1.7;color:var(--text)}
+.fact-table{width:100%;border-collapse:collapse;margin-bottom:20px}
+.fact-table th{background:var(--bleu);color:#fff;padding:10px 12px;font-size:12px;font-weight:600;text-align:left}
+.fact-table td{padding:10px 12px;font-size:13px;border-bottom:1px solid var(--border)}
+.fact-table tr:last-child td{border-bottom:none}
+.fact-table tr:nth-child(even) td{background:#f8f8f6}
+.fact-totaux-preview{margin-left:auto;width:260px}
+.fact-total-preview-row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px}
+.fact-total-preview-row.final{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--bleu);border-top:2px solid var(--bleu);margin-top:6px;padding-top:8px}
+.fact-footer-note{font-size:12px;color:var(--gris2);border-top:1px solid var(--border);padding-top:14px;margin-top:20px}
+@media print{nav,.pwa-banner,#modal-repondre,.fact-header-section,.fact-grid,.fact-lignes,.fact-totaux,.fact-btns{display:none!important}.fact-preview{border:none!important;padding:0!important}.page{display:block!important}}
+@media(max-width:700px){.fact-grid{grid-template-columns:1fr}.fact-ligne-header{display:none}.fact-ligne{grid-template-columns:1fr 1fr;gap:6px}.fact-ligne input:first-child{grid-column:1/-1}.fact-parties{grid-template-columns:1fr}}
 .company-info{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
 .company-info-row{display:flex;align-items:center;gap:8px;font-size:12px;color:#555}
 .company-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
@@ -221,8 +365,10 @@ nav{background:var(--bleu);padding:0 1.5rem;display:flex;align-items:center;just
     <button class="nav-btn active" onclick="showPage('home')">Accueil</button>
     <button class="nav-btn" onclick="showPage('annuaire')">Annuaire</button>
     <button class="nav-btn" onclick="showPage('offres')">🔥 Offres</button>
+    <button class="nav-btn" onclick="showPage('particuliers')" style="background:#FF8A65;border-color:#FF8A65;color:#fff">📢 Particuliers</button>
+    <button class="nav-btn" onclick="showPage('facture')">🧾 Facturer</button>
     <button class="nav-btn" onclick="showPage('simulateur')">Simulateur</button>
-    <button class="nav-btn" id="btn-profil" onclick="showPage('login')" style="background:#FF8A65;border-color:#FF8A65">Connexion</button>
+    <button class="nav-btn" id="btn-profil" onclick="showPage('login')" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3)">Connexion</button>
   </div>
 </nav>
 
@@ -279,6 +425,11 @@ nav{background:var(--bleu);padding:0 1.5rem;display:flex;align-items:center;just
         <div class="feature-icon">🏭</div>
         <h3>Industrie & Matériaux</h3>
         <p>Imprimeries, grossistes en matériaux, équipements industriels — tournées B2B régulières.</p>
+      </div>
+      <div class="feature-card" onclick="showPageCat('annuaire','Déchets')">
+        <div class="feature-icon">♻️</div>
+        <h3>Déchets & Encombrants</h3>
+        <p>Renewi, Veolia, Suez, ressourceries, Kringwinkel — collecte meubles, encombrants et déchetterie.</p>
       </div>
       <div class="feature-card" onclick="showPage('simulateur')">
         <div class="feature-icon">💰</div>
@@ -355,6 +506,8 @@ nav{background:var(--bleu);padding:0 1.5rem;display:flex;align-items:center;just
           <option>Collecte à domicile</option><option>Retour colis</option>
           <option>Livraison auto/moto</option><option>Livraison bijoux/luxe</option>
           <option>Livraison textile</option><option>Livraison informatique</option>
+          <option>Collecte encombrants</option><option>Transport déchets</option>
+          <option>Collecte meubles usagés</option><option>Débarras logement</option>
         </select>
       </div>
       <div class="search-field">
@@ -379,6 +532,7 @@ nav{background:var(--bleu);padding:0 1.5rem;display:flex;align-items:center;just
       <button class="cat-tab" onclick="setCat('Commerce')">🏪 Commerces & Services</button>
       <button class="cat-tab" onclick="setCat('Auto')">🚗 Auto & Garage</button>
       <button class="cat-tab" onclick="setCat('Luxe')">💎 Bijoux & Luxe</button>
+      <button class="cat-tab" onclick="setCat('Déchets')">♻️ Déchets & Encombrants</button>
     </div>
     <div class="results-count" id="results-count"></div>
     <div class="company-grid" id="company-grid"></div>
@@ -610,6 +764,324 @@ nav{background:var(--bleu);padding:0 1.5rem;display:flex;align-items:center;just
       </div>
       <button class="btn-primary" onclick="submitOffre()" style="margin-top:4px">📤 Publier l'offre gratuitement</button>
     </div>
+  </div>
+</div>
+
+<!-- PARTICULIERS -->
+<div class="page" id="page-particuliers">
+  <div class="part-wrap">
+
+    <div class="part-hero">
+      <h2>📢 Besoin d'un livreur ou transporteur ?</h2>
+      <p>Déposez votre annonce gratuitement — canapé à déplacer, courses à livrer, déchetterie, déménagement... Des livreurs indépendants près de chez vous vous répondent.</p>
+      <div class="part-hero-btns">
+        <button class="btn-part-post" onclick="togglePartForm()">✏️ Déposer mon annonce</button>
+        <button class="btn-part-browse" onclick="document.getElementById('part-liste').scrollIntoView({behavior:'smooth'})">👀 Voir les annonces</button>
+      </div>
+    </div>
+
+    <!-- Formulaire dépôt -->
+    <div class="part-form-wrap" id="part-form-wrap">
+      <h3>✏️ Déposer une annonce</h3>
+      <p>Gratuit, sans inscription — les livreurs vous contactent directement.</p>
+
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:13px;font-weight:600;color:var(--gris2);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px">Type de mission</label>
+        <div class="part-cat-select" id="part-cat-select">
+          <div class="part-cat-option" onclick="selectPartCat(this,'Meuble')"><span>🛋️</span>Meuble</div>
+          <div class="part-cat-option" onclick="selectPartCat(this,'Déménagement')"><span>📦</span>Déménagement</div>
+          <div class="part-cat-option" onclick="selectPartCat(this,'Courses')"><span>🛒</span>Courses</div>
+          <div class="part-cat-option" onclick="selectPartCat(this,'Déchetterie')"><span>♻️</span>Déchetterie</div>
+          <div class="part-cat-option" onclick="selectPartCat(this,'Électroménager')"><span>🫧</span>Électroménager</div>
+          <div class="part-cat-option" onclick="selectPartCat(this,'Colis')"><span>📬</span>Colis / Envoi</div>
+          <div class="part-cat-option" onclick="selectPartCat(this,'Jardinage')"><span>🌿</span>Jardinage</div>
+          <div class="part-cat-option" onclick="selectPartCat(this,'Autre')"><span>🔧</span>Autre</div>
+        </div>
+      </div>
+
+      <div class="part-form-grid">
+        <div class="form-group">
+          <label>Titre de l'annonce</label>
+          <input type="text" id="p-titre" placeholder="Ex: Canapé 3 places à transporter" oninput="this.style.border=''">
+        </div>
+        <div class="form-group">
+          <label>Ville de départ</label>
+          <input type="text" id="p-depart" placeholder="Ex: Liège, Bruxelles, Namur..." list="villes-be" autocomplete="off" oninput="this.style.border=''">
+        </div>
+        <div class="form-group">
+          <label>Ville d'arrivée</label>
+          <input type="text" id="p-arrivee" placeholder="Ex: Namur, Gand... (ou même ville)" list="villes-be" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Date souhaitée</label>
+          <input type="date" id="p-date">
+        </div>
+        <div class="form-group part-form-full">
+          <label>Description détaillée</label>
+          <textarea id="p-desc" rows="3" placeholder="Décrivez ce qu'il faut transporter — taille, poids, étages, accès, besoin d'aide au portage..." style="width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;resize:vertical"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Budget proposé (€)</label>
+          <input type="text" id="p-prix" placeholder="Ex: 80 €">
+          <div class="prix-suggestion">
+            <button class="prix-chip" onclick="document.getElementById('p-prix').value='30 €'">30 €</button>
+            <button class="prix-chip" onclick="document.getElementById('p-prix').value='50 €'">50 €</button>
+            <button class="prix-chip" onclick="document.getElementById('p-prix').value='80 €'">80 €</button>
+            <button class="prix-chip" onclick="document.getElementById('p-prix').value='120 €'">120 €</button>
+            <button class="prix-chip" onclick="document.getElementById('p-prix').value='À négocier'">À négocier</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Votre contact (tél ou email)</label>
+          <input type="text" id="p-contact" placeholder="Ex: 0478 xx xx xx ou vous@email.be" oninput="this.style.border=''">
+        </div>
+        <div class="form-group part-form-full">
+          <label>📸 Photos de ce qu'il faut transporter</label>
+          <div class="photo-upload-zone" onclick="document.getElementById('p-photos-input').click()">
+            <div class="upload-icon">📷</div>
+            <strong style="font-size:14px">Cliquez pour ajouter des photos</strong>
+            <p>JPG, PNG — max 5 photos. Les livreurs voient exactement ce qu'ils doivent transporter.</p>
+          </div>
+          <input type="file" id="p-photos-input" accept="image/*" multiple style="display:none" onchange="handlePhotoUpload(event)">
+          <div class="photos-preview" id="photos-preview"></div>
+        </div>
+        <div class="form-group">
+          <label>Véhicule nécessaire</label>
+          <select id="p-vehicule">
+            <option value="">Peu importe</option>
+            <option>Voiture</option>
+            <option>Utilitaire type Berlingo</option>
+            <option>Camionnette 20m³</option>
+            <option>Grand camion</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Aide au portage nécessaire ?</label>
+          <select id="p-portage">
+            <option>Non, juste le transport</option>
+            <option>Oui, 1 personne suffit</option>
+            <option>Oui, 2 personnes minimum</option>
+          </select>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
+        <button class="btn-primary" onclick="submitAnnonce()">📢 Publier mon annonce</button>
+        <button class="btn-reset" onclick="togglePartForm()">Annuler</button>
+      </div>
+    </div>
+
+    <!-- Filtres -->
+    <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;align-items:center">
+      <strong style="font-family:'Syne',sans-serif;font-size:15px;color:var(--bleu)">Filtrer :</strong>
+      <select id="part-filter-region" onchange="renderAnnonces()" style="padding:9px 14px;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;background:#fff;outline:none">
+        <option value="">Toute la Belgique</option>
+        <option>Bruxelles</option><option>Liège</option><option>Hainaut</option>
+        <option>Namur</option><option>Flandre</option><option>Anvers</option>
+        <option>Brabant Wallon</option><option>Luxembourg</option>
+      </select>
+      <select id="part-filter-type" onchange="renderAnnonces()" style="padding:9px 14px;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;background:#fff;outline:none">
+        <option value="">Tous types</option>
+        <option>Meuble</option><option>Déménagement</option><option>Courses</option>
+        <option>Déchetterie</option><option>Électroménager</option><option>Colis</option>
+        <option>Jardinage</option><option>Autre</option>
+      </select>
+    </div>
+
+    <!-- Catégories visuelles -->
+    <div class="part-cats">
+      <div class="part-cat-btn active" onclick="filterPartCat('',this)"><span>🔍</span>Tout</div>
+      <div class="part-cat-btn" onclick="filterPartCat('Meuble',this)"><span>🛋️</span>Meubles</div>
+      <div class="part-cat-btn" onclick="filterPartCat('Déménagement',this)"><span>📦</span>Déménagement</div>
+      <div class="part-cat-btn" onclick="filterPartCat('Courses',this)"><span>🛒</span>Courses</div>
+      <div class="part-cat-btn" onclick="filterPartCat('Déchetterie',this)"><span>♻️</span>Déchetterie</div>
+      <div class="part-cat-btn" onclick="filterPartCat('Électroménager',this)"><span>🫧</span>Électroménager</div>
+      <div class="part-cat-btn" onclick="filterPartCat('Colis',this)"><span>📬</span>Colis</div>
+      <div class="part-cat-btn" onclick="filterPartCat('Jardinage',this)"><span>🌿</span>Jardinage</div>
+    </div>
+
+    <div id="part-count" style="font-size:14px;color:var(--gris2);margin-bottom:16px"></div>
+    <div class="part-annonces" id="part-liste"></div>
+
+  </div>
+</div>
+
+<!-- MODAL RÉPONDRE PARTICULIER -->
+<div class="modal-overlay" id="modal-repondre">
+  <div class="modal-box">
+    <button class="modal-close" onclick="fermerModal()">✕</button>
+    <h3>💬 Répondre à l'annonce</h3>
+    <div class="modal-annonce-titre" id="modal-titre-annonce">—</div>
+
+    <div class="modal-contact-options">
+      <button class="modal-contact-btn" id="modal-btn-tel" onclick="contactTel()">
+        <div class="mc-icon tel">📞</div>
+        <div><strong>Appeler directement</strong><span id="modal-tel-label">Numéro disponible</span></div>
+      </button>
+      <button class="modal-contact-btn" id="modal-btn-sms" onclick="contactSMS()">
+        <div class="mc-icon sms">💬</div>
+        <div><strong>Envoyer un SMS</strong><span>Message rapide sur le téléphone</span></div>
+      </button>
+      <button class="modal-contact-btn" id="modal-btn-whatsapp" onclick="contactWhatsApp()">
+        <div class="mc-icon whatsapp">🟢</div>
+        <div><strong>WhatsApp</strong><span>Message WhatsApp avec vos infos</span></div>
+      </button>
+      <button class="modal-contact-btn" id="modal-btn-email" onclick="contactEmail()">
+        <div class="mc-icon email">✉️</div>
+        <div><strong>Envoyer un email</strong><span id="modal-email-label">Email disponible</span></div>
+      </button>
+    </div>
+
+    <div class="modal-divider">ou laissez un message via TransportBE</div>
+
+    <div class="modal-msg-form" style="margin-top:12px">
+      <textarea id="modal-msg" rows="3" placeholder="Bonjour, je suis livreur indépendant disponible pour votre mission. Je dispose d'un utilitaire et je suis disponible..."></textarea>
+      <input type="text" id="modal-mon-tel" placeholder="Votre numéro de téléphone">
+      <input type="text" id="modal-mon-nom" placeholder="Votre prénom">
+      <button class="btn-envoyer-msg" onclick="envoyerMessage()">📤 Envoyer ma réponse</button>
+    </div>
+  </div>
+</div>
+
+<!-- DATALIST VILLES BELGES -->
+<datalist id="villes-be">
+  <option value="Bruxelles"><option value="Anderlecht"><option value="Ixelles"><option value="Schaerbeek"><option value="Molenbeek"><option value="Etterbeek"><option value="Forest"><option value="Uccle"><option value="Jette"><option value="Laeken">
+  <option value="Liège"><option value="Seraing"><option value="Herstal"><option value="Ans"><option value="Grâce-Hollogne"><option value="Visé"><option value="Huy"><option value="Verviers"><option value="Spa">
+  <option value="Namur"><option value="Jambes"><option value="Gembloux"><option value="Dinant"><option value="Ciney"><option value="Andenne">
+  <option value="Charleroi"><option value="Mons"><option value="La Louvière"><option value="Tournai"><option value="Binche"><option value="Tubize"><option value="Soignies">
+  <option value="Wavre"><option value="Louvain-la-Neuve"><option value="Nivelles"><option value="Ottignies"><option value="Braine-l'Alleud"><option value="Waterloo">
+  <option value="Arlon"><option value="Bastogne"><option value="Marche-en-Famenne"><option value="Virton">
+  <option value="Gand"><option value="Bruges"><option value="Anvers"><option value="Ostende"><option value="Courtrai"><option value="Hasselt"><option value="Louvain"><option value="Malines"><option value="Genk"><option value="Sint-Niklaas"><option value="Aalst"><option value="Roeselare"><option value="Turnhout"><option value="Lokeren">
+  <option value="Zaventem"><option value="Vilvoorde"><option value="Grimbergen"><option value="Tervuren">
+</datalist>
+
+<!-- LIGHTBOX PHOTOS -->
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('show')">
+  <button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('show')">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- FACTURE -->
+<div class="page" id="page-facture">
+  <div class="fact-wrap">
+    <div class="fact-header-section">
+      <div>
+        <h2>🧾 Générateur de facture</h2>
+        <p>Créez et imprimez vos factures professionnelles en quelques secondes</p>
+      </div>
+      <div class="fact-btns">
+        <button class="btn-fact-action btn-fact-print" onclick="imprimerFacture()">🖨️ Imprimer / PDF</button>
+        <button class="btn-fact-action btn-fact-new" onclick="nouvelleFacture()" style="background:rgba(255,255,255,0.15);color:#fff;border:1.5px solid rgba(255,255,255,0.4)">➕ Nouvelle facture</button>
+      </div>
+    </div>
+
+    <div class="fact-grid">
+      <!-- VOS INFOS -->
+      <div class="fact-section">
+        <h3>👤 Vos informations</h3>
+        <div class="fact-field"><label>Nom / Raison sociale</label><input id="f-nom" placeholder="Ex: Jean Dupont Transport" oninput="updatePreview()"></div>
+        <div class="fact-field"><label>Adresse</label><input id="f-adresse" placeholder="Ex: Rue de la Gare 12, 4000 Liège" oninput="updatePreview()"></div>
+        <div class="fact-field"><label>Téléphone</label><input id="f-tel" placeholder="+32 4xx xx xx xx" oninput="updatePreview()"></div>
+        <div class="fact-field"><label>Email</label><input id="f-email" placeholder="vous@email.be" oninput="updatePreview()"></div>
+        <div class="fact-field"><label>N° BCE / TVA (optionnel)</label><input id="f-tva" placeholder="BE 0xxx.xxx.xxx" oninput="updatePreview()"></div>
+        <div class="fact-field"><label>N° de compte (IBAN)</label><input id="f-iban" placeholder="BE68 xxxx xxxx xxxx" oninput="updatePreview()"></div>
+      </div>
+      <!-- CLIENT -->
+      <div class="fact-section">
+        <h3>🏢 Client</h3>
+        <div class="fact-field"><label>Nom du client</label><input id="f-client-nom" placeholder="Ex: Marie Lecomte ou IKEA Belgium" oninput="updatePreview()"></div>
+        <div class="fact-field"><label>Adresse du client</label><input id="f-client-adresse" placeholder="Ex: Avenue Louise 50, 1050 Bruxelles" oninput="updatePreview()"></div>
+        <div class="fact-field"><label>Email client</label><input id="f-client-email" placeholder="client@email.be" oninput="updatePreview()"></div>
+        <div class="fact-field"><label>N° facture</label><input id="f-num" placeholder="Ex: 2024-001" oninput="updatePreview()"></div>
+        <div class="fact-field"><label>Date de la facture</label><input type="date" id="f-date" oninput="updatePreview()"></div>
+        <div class="fact-field"><label>Date d'échéance</label><input type="date" id="f-echeance" oninput="updatePreview()"></div>
+      </div>
+    </div>
+
+    <!-- LIGNES -->
+    <div class="fact-lignes">
+      <h3>📋 Prestations</h3>
+      <div class="fact-ligne-header">
+        <span>Description</span><span>Quantité</span><span>Prix unit.</span><span>Total HT</span><span></span>
+      </div>
+      <div id="fact-lignes-list"></div>
+      <button class="btn-add-ligne" onclick="ajouterLigne()">+ Ajouter une ligne</button>
+    </div>
+
+    <!-- TOTAUX -->
+    <div class="fact-totaux">
+      <div class="fact-total-row"><label>Sous-total HT</label><span id="f-subtotal">0,00 €</span></div>
+      <div class="fact-total-row tva-row">
+        <label>TVA</label>
+        <div style="display:flex;align-items:center;gap:8px">
+          <select class="tva-select" id="f-tva-pct" onchange="updatePreview()">
+            <option value="0">0% (franchise TVA)</option>
+            <option value="6">6%</option>
+            <option value="12">12%</option>
+            <option value="21" selected>21%</option>
+          </select>
+          <span id="f-tva-montant">0,00 €</span>
+        </div>
+      </div>
+      <div class="fact-total-row"><label>Frais kilométriques (optionnel)</label>
+        <div style="display:flex;align-items:center;gap:6px">
+          <input type="number" id="f-km" placeholder="km" style="width:70px;padding:5px 8px;border:1.5px solid var(--border);border-radius:6px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none" oninput="updatePreview()">
+          <span style="font-size:13px;color:var(--gris2)">× 0,42 €/km =</span>
+          <span id="f-km-total">0,00 €</span>
+        </div>
+      </div>
+      <div class="fact-total-row" style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--bleu)">
+        <label style="color:var(--bleu)">TOTAL TTC</label><span id="f-total-ttc">0,00 €</span>
+      </div>
+    </div>
+
+    <!-- NOTE -->
+    <div class="fact-section" style="margin-bottom:20px">
+      <h3>📝 Note / Conditions de paiement</h3>
+      <div class="fact-field">
+        <textarea id="f-note" rows="2" placeholder="Ex: Paiement sous 30 jours. En cas de retard, des intérêts de 10% seront appliqués." oninput="updatePreview()"></textarea>
+      </div>
+    </div>
+
+    <!-- APERÇU IMPRIMABLE -->
+    <div class="fact-preview" id="fact-preview">
+      <div class="fact-preview-header">
+        <div>
+          <div class="fact-preview-logo">Transport<span>BE</span></div>
+          <div id="prev-nom" style="font-size:15px;font-weight:600;margin-top:4px;color:var(--bleu)"></div>
+          <div id="prev-adresse" style="font-size:13px;color:var(--gris2);margin-top:2px"></div>
+          <div id="prev-contact" style="font-size:13px;color:var(--gris2)"></div>
+          <div id="prev-tva-num" style="font-size:13px;color:var(--gris2)"></div>
+        </div>
+        <div class="fact-preview-num">
+          <div style="font-size:12px;color:var(--gris2);text-transform:uppercase;letter-spacing:0.5px">Facture</div>
+          <strong id="prev-num">N° —</strong>
+          <div style="font-size:13px;color:var(--gris2);margin-top:4px">Date : <span id="prev-date">—</span></div>
+          <div style="font-size:13px;color:var(--gris2)">Échéance : <span id="prev-echeance">—</span></div>
+        </div>
+      </div>
+      <div class="fact-parties">
+        <div class="fact-partie"><h4>Émetteur</h4><p id="prev-emetteur">—</p></div>
+        <div class="fact-partie"><h4>Client</h4><p id="prev-client">—</p></div>
+      </div>
+      <table class="fact-table">
+        <thead><tr><th>Description</th><th>Qté</th><th>Prix unit. HT</th><th>Total HT</th></tr></thead>
+        <tbody id="prev-lignes"></tbody>
+      </table>
+      <div style="display:flex;justify-content:flex-end">
+        <div class="fact-totaux-preview">
+          <div class="fact-total-preview-row"><span>Sous-total HT</span><span id="prev-subtotal">0,00 €</span></div>
+          <div class="fact-total-preview-row" id="prev-km-row" style="display:none"><span id="prev-km-label">Frais km</span><span id="prev-km-val">0,00 €</span></div>
+          <div class="fact-total-preview-row"><span id="prev-tva-label">TVA (21%)</span><span id="prev-tva-val">0,00 €</span></div>
+          <div class="fact-total-preview-row final"><span>TOTAL TTC</span><span id="prev-total">0,00 €</span></div>
+        </div>
+      </div>
+      <div class="fact-footer-note">
+        <div id="prev-iban" style="margin-bottom:6px"></div>
+        <div id="prev-note"></div>
+        <div style="margin-top:8px;color:#aaa">Généré via TransportBE.be</div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -856,6 +1328,37 @@ const companies = [
   {nom:"Telenet Belgium",cat:"Commerce",region:"Flandre",ville:"Mechelen 2800",tel:"+32 15 33 30 00",web:"telenet.be",types:["Livraison informatique","Livraison B2B"],info:"Opérateur télécom — livraisons équipements abonnés.",hot:false,verified:true},
   {nom:"Unizo Belgium",cat:"Commerce",region:"Flandre",ville:"Flandre",tel:"+32 2 238 05 00",web:"unizo.be",types:["Livraison B2B"],info:"Fédération PME — mise en relation transporteurs et petits commerces.",hot:false,verified:true},
   {nom:"UCM Belgium",cat:"Commerce",region:"Wallonie",ville:"Namur 5000",tel:"+32 81 32 05 00",web:"ucm.be",types:["Livraison B2B"],info:"Union classes moyennes — PME et indépendants cherchant transporteurs.",hot:false,verified:true},
+
+  // ===== DÉCHETS, ENCOMBRANTS & DÉCHETTERIE =====
+  {nom:"Recupel Belgium",cat:"Déchets",region:"Nationale",ville:"Belgique entière",tel:"+32 2 706 86 16",web:"recupel.be",types:["Collecte encombrants","Transport déchets"],info:"Collecte appareils électroménagers et électroniques usagés — chauffeurs indépendants pour enlèvements chez particuliers et entreprises.",hot:true,verified:true},
+  {nom:"Fost Plus Belgium",cat:"Déchets",region:"Nationale",ville:"Bruxelles 1000",tel:"+32 2 775 03 50",web:"fostplus.be",types:["Collecte encombrants","Transport déchets"],info:"Organisme collecte PMC et emballages — sous-traitants transport pour tournées de collecte.",hot:false,verified:true},
+  {nom:"Renewi Belgium",cat:"Déchets",region:"Nationale",ville:"Belgique entière",tel:"+32 2 352 05 11",web:"renewi.com",types:["Transport déchets","Collecte encombrants"],info:"Gestion déchets industriels et ménagers — chauffeurs et camions sous-traitance.",hot:true,verified:true},
+  {nom:"Shanks / Indaver Belgium",cat:"Déchets",region:"Nationale",ville:"Anvers 2000",tel:"+32 3 250 50 50",web:"indaver.be",types:["Transport déchets"],info:"Traitement déchets industriels — sous-traitants transport déchets spéciaux.",hot:false,verified:true},
+  {nom:"Suez Belgium",cat:"Déchets",region:"Nationale",ville:"Bruxelles 1040",tel:"+32 2 510 52 11",web:"suez.com/be",types:["Transport déchets","Collecte encombrants"],info:"Gestion déchets et eau — collecte encombrants et déchets ménagers, sous-traitants.",hot:true,verified:true},
+  {nom:"Veolia Belgium",cat:"Déchets",region:"Nationale",ville:"Bruxelles 1000",tel:"+32 2 777 50 00",web:"veolia.be",types:["Transport déchets","Collecte encombrants"],info:"Services environnementaux — collecte et transport déchets, chauffeurs indépendants.",hot:true,verified:true},
+  {nom:"IVAO Antwerpen",cat:"Déchets",region:"Anvers",ville:"Anvers 2018",tel:"+32 3 543 87 00",web:"ivao.be",types:["Collecte encombrants","Transport déchets"],info:"Intercommunale déchets Anvers — collecte encombrants chez particuliers, sous-traitants.",hot:false,verified:true},
+  {nom:"TIBI Hainaut",cat:"Déchets",region:"Hainaut",ville:"Mons 7000",tel:"+32 65 87 97 11",web:"tibi.be",types:["Collecte encombrants","Transport déchets"],info:"Intercommunale déchets Hainaut — collecte et transport encombrants région Mons-Borinage.",hot:true,verified:true},
+  {nom:"BEP Environnement Namur",cat:"Déchets",region:"Namur",ville:"Namur 5000",tel:"+32 81 71 71 71",web:"bep.be",types:["Collecte encombrants","Transport déchets"],info:"Gestion déchets province Namur — collecte meubles et encombrants, sous-traitants véhicule utilitaire.",hot:false,verified:true},
+  {nom:"InBW Brabant Wallon",cat:"Déchets",region:"Brabant Wallon",ville:"Wavre 1300",tel:"+32 10 23 53 00",web:"inbw.be",types:["Transport déchets","Collecte encombrants"],info:"Intercommunale Brabant Wallon — collecte sélective et encombrants, sous-traitance.",hot:false,verified:true},
+  {nom:"IDELUX Luxembourg",cat:"Déchets",region:"Luxembourg",ville:"Arlon 6700",tel:"+32 63 23 18 11",web:"idelux.be",types:["Transport déchets","Collecte encombrants"],info:"Intercommunale province Luxembourg — collecte déchets et encombrants, chauffeurs locaux.",hot:false,verified:true},
+  {nom:"Intradura Liège",cat:"Déchets",region:"Liège",ville:"Liège 4020",tel:"+32 4 240 74 74",web:"intradura.be",types:["Collecte encombrants","Transport déchets"],info:"Intercommunale déchets Liège — collecte encombrants et transport déchetterie.",hot:true,verified:true},
+  {nom:"Intradel Liège",cat:"Déchets",region:"Liège",ville:"Herstal 4040",tel:"+32 4 240 74 20",web:"intradel.be",types:["Collecte encombrants","Transport déchets"],info:"Gestion déchets Liège — collecte ménagère et encombrants, sous-traitants.",hot:true,verified:true},
+  {nom:"Net Brussel / Bruxelles Propreté",cat:"Déchets",region:"Bruxelles",ville:"Bruxelles 1120",tel:"+32 2 778 08 11",web:"arp-gan.be",types:["Collecte encombrants","Transport déchets"],info:"Propreté publique Bruxelles — collecte encombrants particuliers, chauffeurs camionnette.",hot:true,verified:true},
+  {nom:"Mobi-Pick Belgium",cat:"Déchets",region:"Nationale",ville:"Belgique entière",tel:"+32 2 880 00 00",web:"mobi-pick.be",types:["Collecte meubles usagés","Collecte encombrants"],info:"Collecte meubles et objets usagés chez particuliers — revente ou recyclage. Chauffeurs avec utilitaire.",hot:true,verified:false},
+  {nom:"Kringwinkel / Spullenhulp",cat:"Déchets",region:"Flandre",ville:"Flandre",tel:"+32 3 313 00 00",web:"kringwinkel.be",types:["Collecte meubles usagés","Débarras logement"],info:"Réseau ressourceries Flandre — collecte meubles et objets donnés, chauffeurs avec camionnette.",hot:true,verified:true},
+  {nom:"Oxfam Magasins du Monde",cat:"Déchets",region:"Nationale",ville:"Belgique entière",tel:"+32 2 501 67 00",web:"oxfammagasinsdumonde.be",types:["Collecte meubles usagés","Collecte encombrants"],info:"Collecte vêtements, meubles et objets — chauffeurs bénévoles ou indépendants.",hot:false,verified:true},
+  {nom:"Les Petits Riens Belgium",cat:"Déchets",region:"Bruxelles",ville:"Bruxelles 1080",tel:"+32 2 411 71 67",web:"petitsriens.be",types:["Collecte meubles usagés","Débarras logement"],info:"Association collecte meubles et vêtements — chauffeurs utilitaire pour enlèvements chez particuliers.",hot:true,verified:true},
+  {nom:"RaRe Ressourcerie",cat:"Déchets",region:"Liège",ville:"Liège 4000",tel:"+32 4 229 00 00",web:"rare.be",types:["Collecte meubles usagés","Collecte encombrants"],info:"Ressourcerie Liège — collecte objets et meubles réutilisables, chauffeurs indépendants.",hot:false,verified:false},
+  {nom:"Terre asbl Belgium",cat:"Déchets",region:"Nationale",ville:"Belgique entière",tel:"+32 2 332 00 90",web:"terre.be",types:["Collecte meubles usagés","Collecte encombrants"],info:"Collecte textiles et meubles usagés — chauffeurs utilitaire pour enlèvements à domicile.",hot:false,verified:true},
+  {nom:"Repair & Share Belgium",cat:"Déchets",region:"Bruxelles",ville:"Bruxelles 1000",tel:"+32 2 880 00 00",web:"repairandshare.be",types:["Collecte meubles usagés"],info:"Réparation et don objets — collecte domicile et livraison ateliers partenaires.",hot:true,verified:false},
+  {nom:"Débarras Express Belgium",cat:"Déchets",region:"Bruxelles",ville:"Bruxelles entière",tel:"+32 2 345 00 00",web:"debarras-express.be",types:["Débarras logement","Collecte encombrants"],info:"Débarras appartements, caves, greniers — chauffeurs avec camionnette ou grand utilitaire.",hot:true,verified:false},
+  {nom:"Derichebourg Belgium",cat:"Déchets",region:"Nationale",ville:"Belgique entière",tel:"+32 2 480 00 00",web:"derichebourg.be",types:["Transport déchets","Collecte encombrants"],info:"Recyclage métaux et déchets industriels — sous-traitants transport ferraille et matériaux.",hot:false,verified:true},
+  {nom:"Sita / Suez Recyclage",cat:"Déchets",region:"Nationale",ville:"Belgique entière",tel:"+32 2 510 52 11",web:"suez-recyclage.be",types:["Transport déchets"],info:"Collecte et valorisation déchets — chauffeurs poids lourds et légers sous-traitance.",hot:false,verified:true},
+  {nom:"Van Gansewinkel Belgium",cat:"Déchets",region:"Nationale",ville:"Belgique entière",tel:"+32 2 352 00 00",web:"vangansewinkbelgium.be",types:["Transport déchets","Collecte encombrants"],info:"Gestion déchets PME — collecte conteneurs et encombrants entreprises.",hot:true,verified:false},
+  {nom:"Ecobati Belgium",cat:"Déchets",region:"Nationale",ville:"Belgique entière",tel:"+32 2 880 00 00",web:"ecobati.be",types:["Transport déchets"],info:"Déchets de construction — transport gravats, plâtre, bois de chantier vers centres agréés.",hot:true,verified:false},
+  {nom:"Traxio / Federauto Recyclage",cat:"Déchets",region:"Nationale",ville:"Belgique entière",tel:"+32 2 778 62 00",web:"traxio.be",types:["Transport déchets","Collecte encombrants"],info:"Recyclage véhicules hors d'usage — transport épaves entre garages et centres agréés.",hot:false,verified:true},
+  {nom:"WeRecycle Belgium",cat:"Déchets",region:"Bruxelles",ville:"Bruxelles 1000",tel:"+32 2 880 00 00",web:"werecycle.be",types:["Collecte encombrants","Collecte meubles usagés"],info:"Startup recyclage mobilier et électronique — chauffeurs indépendants Bruxelles et périphérie.",hot:true,verified:false},
+  {nom:"Cycle Up Belgium",cat:"Déchets",region:"Nationale",ville:"Belgique entière",tel:"+32 2 880 00 00",web:"cycleup.be",types:["Collecte meubles usagés","Transport déchets"],info:"Réemploi matériaux construction — collecte chantiers et livraison entrepôts partenaires.",hot:true,verified:false},
 ];
 
 let currentCat = '';
@@ -902,7 +1405,7 @@ function renderCompanies(filtered){
     grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--gris2)"><div style="font-size:40px;margin-bottom:12px">🔍</div><p>Aucun résultat — modifiez vos filtres</p></div>`;
     return;
   }
-  const catColors = {Transporteur:'cat-transporteur',Plateforme:'cat-plateforme',Enseigne:'cat-enseigne',Pharmacie:'cat-pharmacie',Déménagement:'cat-demenagement',Alimentaire:'cat-transporteur',Événementiel:'cat-evenementiel',Boisson:'cat-boisson',Industrie:'cat-industrie',Commerce:'cat-commerce',Collecte:'cat-collecte',Auto:'cat-auto',Luxe:'cat-luxe'};
+  const catColors = {Transporteur:'cat-transporteur',Plateforme:'cat-plateforme',Enseigne:'cat-enseigne',Pharmacie:'cat-pharmacie',Déménagement:'cat-demenagement',Alimentaire:'cat-transporteur',Événementiel:'cat-evenementiel',Boisson:'cat-boisson',Industrie:'cat-industrie',Commerce:'cat-commerce',Collecte:'cat-collecte',Auto:'cat-auto',Luxe:'cat-luxe',Déchets:'cat-dechets'};
   grid.innerHTML = filtered.map(c => `
     <div class="company-card ${c.hot?'hot':''}">
       ${c.hot ? '<div class="hot-badge">🔥 Cherche activement</div>' : ''}
@@ -1004,7 +1507,7 @@ function showPage(id){
   const page = document.getElementById('page-'+id);
   if(!page){ console.warn('Page not found: page-'+id); return; }
   page.classList.add('active');
-  const map={home:0,annuaire:1,offres:2,simulateur:3,login:4,profil:4};
+  const map={home:0,annuaire:1,offres:2,particuliers:3,facture:4,simulateur:5,login:6,profil:6};
   const btns=document.querySelectorAll('.nav-btn');
   if(map[id]!==undefined && btns[map[id]]){
     btns[map[id]].classList.add('active');
@@ -1012,6 +1515,8 @@ function showPage(id){
   }
   if(id==='annuaire')filterCompanies();
   if(id==='offres')renderOffres();
+  if(id==='particuliers')renderAnnonces();
+  if(id==='facture')updatePreview();
   if(id==='profil')loadEdits();
   window.scrollTo(0,0);
 }
@@ -1054,6 +1559,10 @@ const offres = [
   {id:13,titre:"Chauffeur VTC / coursier Luxembourg",societe:"Transports Braibant",region:"Luxembourg",type:"Express",vehicule:"Voiture",tarif:"16 € / heure",nbColis:"Variable",horaire:"Flexible",urgent:false,date:"Il y a 6 jours",contact:"+32 63 22 55 30",desc:"Transport documents et petits colis province Luxembourg. Permis B, véhicule personnel accepté."},
   {id:14,titre:"Livreur électroménager installation",societe:"Krefel",region:"Nationale",type:"Meubles",vehicule:"Camionnette",tarif:"140 € / journée",nbColis:"4–8 livraisons",horaire:"8h–18h en semaine",urgent:false,date:"Il y a 3 jours",contact:"delivery@krefel.be",desc:"Livraison et installation électroménager. 2 personnes souhaitées. Savoir-faire technique."},
   {id:15,titre:"Navette dépôts colis Bruxelles",societe:"InPost Belgium",region:"Bruxelles",type:"Collecte domicile",vehicule:"Utilitaire",tarif:"120 € / journée",nbColis:"Navettes entre casiers",horaire:"6h–10h + 17h–20h",urgent:true,date:"Aujourd'hui",contact:"ops@inpost.be",desc:"Collecte et réapprovisionnement casiers automatiques Bruxelles. 2 tournées/jour possibles."},
+  {id:16,titre:"Collecte meubles usagés à domicile",societe:"Kringwinkel Belgium",region:"Flandre",type:"Collecte domicile",vehicule:"Camionnette",tarif:"110 € / journée",nbColis:"5–12 enlèvements/jour",horaire:"8h–17h en semaine",urgent:true,date:"Aujourd'hui",contact:"+32 3 313 00 00",desc:"Enlèvement meubles et objets donnés chez particuliers. Camionnette 20m³, bon état physique."},
+  {id:17,titre:"Transport encombrants déchetterie",societe:"Renewi Belgium",region:"Nationale",type:"Collecte domicile",vehicule:"Utilitaire",tarif:"125 € / journée",nbColis:"Tournées résidentielles",horaire:"7h–15h, du lundi au samedi",urgent:false,date:"Il y a 1 jour",contact:"recrutement@renewi.com",desc:"Collecte encombrants chez particuliers et livraison centres de tri. Véhicule utilitaire ou camionnette."},
+  {id:18,titre:"Débarras logements Bruxelles",societe:"Les Petits Riens",region:"Bruxelles",type:"Collecte domicile",vehicule:"Camionnette",tarif:"100 € / demi-journée",nbColis:"2–4 débarras/jour",horaire:"8h–13h ou 13h–18h",urgent:true,date:"Aujourd'hui",contact:"+32 2 411 71 67",desc:"Débarras appartements et caves Bruxelles. Tri sur place, objets récupérables vers magasins."},
+
 ];
 
 let filteredOffres = [...offres];
@@ -1270,10 +1779,412 @@ if('serviceWorker' in navigator){
   navigator.serviceWorker.register(URL.createObjectURL(swBlob)).catch(()=>{});
 }
 
+// ===== PARTICULIERS =====
+let partCatSelected = '';
+let partCatFilter = '';
+
+const annonces = [
+  {id:1,titre:"Canapé 3 places + fauteuil à transporter",cat:"Meuble",region:"Bruxelles",depart:"Ixelles 1050",arrivee:"Schaerbeek 1030",date:"Dès que possible",prix:"70 €",vehicule:"Utilitaire type Berlingo",portage:"Oui, 1 personne suffit",desc:"Canapé d\'angle 3 places et 1 fauteuil. 2ème étage sans ascenseur au départ, rez-de-chaussée à l\'arrivée. Environ 3km entre les deux adresses.",contact:"Marie L.",tel:"+32478123456",email:"marie.l@gmail.com",urgent:true,heure:"Il y a 2h"},
+  {id:2,titre:"Déchetterie — vieux frigo + machine à laver",cat:"Déchetterie",region:"Liège",depart:"Liège 4000",arrivee:"Déchetterie Rocourt",date:"Ce week-end",prix:"50 €",vehicule:"Utilitaire type Berlingo",portage:"Oui, 1 personne suffit",desc:"Frigo américain hors service et machine à laver cassée. Rez-de-chaussée. Besoin d\'un utilitaire et d\'un coup de main.",contact:"Jean-Pierre M.",tel:"+32495234567",email:"jp.martin@hotmail.be",urgent:false,heure:"Il y a 5h"},
+  {id:3,titre:"Petites courses / drive Carrefour",cat:"Courses",region:"Bruxelles",depart:"Carrefour Anderlecht",arrivee:"Molenbeek 1080",date:"Aujourd\'hui avant 18h",prix:"15 €",vehicule:"Voiture",portage:"Non, juste le transport",desc:"Commande drive déjà préparée à récupérer au Carrefour Anderlecht et à livrer chez moi. 4 sacs environ, pas lourd.",contact:"Fatima K.",tel:"+32471345678",email:"",urgent:true,heure:"Il y a 30min"},
+  {id:4,titre:"Déménagement studio complet",cat:"Déménagement",region:"Namur",depart:"Namur 5000",arrivee:"Gembloux 5030",date:"Samedi 31 mai",prix:"À négocier",vehicule:"Camionnette 20m³",portage:"Oui, 2 personnes minimum",desc:"Studio de 35m² — lit, bureau, armoire, cartons. 1er étage avec escalier étroit. Environ 20km entre les deux logements.",contact:"Lucas D.",tel:"+32488456789",email:"lucas.d@outlook.com",urgent:false,heure:"Il y a 1 jour"},
+  {id:5,titre:"Livraison commode IKEA achetée en ligne",cat:"Meuble",region:"Hainaut",depart:"IKEA Mons",arrivee:"La Louvière 7100",date:"Cette semaine",prix:"40 €",vehicule:"Utilitaire type Berlingo",portage:"Non, juste le transport",desc:"2 cartons IKEA HEMNES — commode et table de nuit. Pas très lourd. Livraison au rez-de-chaussée suffisante.",contact:"Sophie B.",tel:"+32476567890",email:"sophie.b@gmail.com",urgent:false,heure:"Il y a 3h"},
+  {id:6,titre:"Transporter vieux électroménager + gravats",cat:"Déchetterie",region:"Brabant Wallon",depart:"Wavre 1300",arrivee:"Déchetterie Chaumont-Gistoux",date:"Ce samedi matin",prix:"60 €",vehicule:"Utilitaire type Berlingo",portage:"Oui, 1 personne suffit",desc:"Vieux four, évier, carrelage cassé et sacs de gravats. Rénovation salle de bain. Tout au rez.",contact:"Pierre V.",tel:"+32492678901",email:"p.v@proximus.be",urgent:false,heure:"Il y a 2 jours"},
+  {id:7,titre:"Courses urgentes — bébé malade",cat:"Courses",region:"Anvers",depart:"Delhaize Anvers centre",arrivee:"Anvers 2060",date:"Aujourd\'hui dans l\'heure",prix:"20 €",vehicule:"Voiture",portage:"Non, juste le transport",desc:"Petite liste de courses pour bébé malade — lait, couches, médicaments. Commande déjà en click & collect.",contact:"Nadia A.",tel:"+32479789012",email:"",urgent:true,heure:"Il y a 15min"},
+  {id:8,titre:"Piano droit à déménager",cat:"Meuble",region:"Flandre",depart:"Gand 9000",arrivee:"Bruges 8000",date:"Courant juin",prix:"150 €",vehicule:"Grand camion",portage:"Oui, 2 personnes minimum",desc:"Piano droit Yamaha, environ 220kg. Rez-de-chaussée des deux côtés. 60km entre Gand et Bruges.",contact:"Erik V.",tel:"+32486890123",email:"erik.v@telenet.be",urgent:false,heure:"Il y a 4h"},
+  {id:9,titre:"Jardin à vider — tondeuse + terre + pots",cat:"Jardinage",region:"Liège",depart:"Seraing 4100",arrivee:"Déchetterie ou à conserver",date:"Ce week-end",prix:"55 €",vehicule:"Utilitaire type Berlingo",portage:"Oui, 1 personne suffit",desc:"Vieux jardin à vider — tondeuse cassée, sacs de terre, grands pots. Clôture à évacuer aussi.",contact:"Georges F.",tel:"+32498901234",email:"georges.f@gmail.com",urgent:false,heure:"Il y a 6h"},
+  {id:10,titre:"Colis urgent vers Paris — départ demain",cat:"Colis",region:"Bruxelles",depart:"Bruxelles 1000",arrivee:"Paris 75001",date:"Demain matin",prix:"80 €",vehicule:"Voiture",portage:"Non, juste le transport",desc:"1 colis 15kg — matériel photo. Doit arriver à Paris avant 18h. Emballé et prêt.",contact:"Adrien T.",tel:"+32474012345",email:"adrien.t@gmail.com",urgent:true,heure:"Il y a 1h"},
+  {id:11,titre:"Cuisine complète à emmener en déchetterie",cat:"Déchetterie",region:"Hainaut",depart:"Charleroi 6000",arrivee:"Déchetterie Jumet",date:"Samedi ou dimanche",prix:"80 €",vehicule:"Camionnette 20m³",portage:"Oui, 2 personnes minimum",desc:"Cuisine complète démontée — meubles, plan de travail, évier, hottes. Environ 15 cartons. Rez-de-chaussée.",contact:"Patricia D.",tel:"+32481123456",email:"patricia.d@hotmail.com",urgent:false,heure:"Il y a 8h"},
+  {id:12,titre:"Livraison repas personne âgée chaque midi",cat:"Courses",region:"Namur",depart:"Traiteur Namur centre",arrivee:"Namur 5000",date:"Tous les midis en semaine",prix:"8 € / livraison",vehicule:"Voiture",portage:"Non, juste le transport",desc:"Ma maman de 82 ans habite seule. Besoin de quelqu\'un pour récupérer son repas chez un traiteur et le livrer chaque midi.",contact:"Isabelle C.",tel:"+32467234567",email:"isabelle.c@gmail.com",urgent:false,heure:"Il y a 1 jour"},
+];
+
+let annoncesFiltered = [...annonces];
+
+function togglePartForm(){
+  const f = document.getElementById('part-form-wrap');
+  f.classList.toggle('show');
+  if(f.classList.contains('show')) f.scrollIntoView({behavior:'smooth'});
+}
+
+function selectPartCat(el, cat){
+  document.querySelectorAll('.part-cat-option').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+  partCatSelected = cat;
+}
+
+function filterPartCat(cat, el){
+  partCatFilter = cat;
+  document.querySelectorAll('.part-cat-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  renderAnnonces();
+}
+
+function renderAnnonces(){
+  const region = document.getElementById('part-filter-region').value;
+  const type = document.getElementById('part-filter-type').value;
+  annoncesFiltered = annonces.filter(a =>
+    (!partCatFilter || a.cat === partCatFilter) &&
+    (!region || a.region === region) &&
+    (!type || a.cat === type)
+  );
+  const count = document.getElementById('part-count');
+  count.innerHTML = `<strong>${annoncesFiltered.length}</strong> annonce(s) de particuliers`;
+  const grid = document.getElementById('part-liste');
+  if(!annoncesFiltered.length){
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--gris2)"><div style="font-size:40px;margin-bottom:12px">📭</div><p>Aucune annonce pour ces critères.</p></div>`;
+    return;
+  }
+  grid.innerHTML = annoncesFiltered.map(a => `
+    <div class="annonce-card ${a.urgent?'urgent':''}">
+      ${a.urgent ? '<div class="annonce-badge-urgent">🔴 Urgent</div>' : '<div class="annonce-badge-new">🕐 '+a.heure+'</div>'}
+      <div class="annonce-titre">${a.titre}</div>
+      <div class="annonce-lieu">📍 ${a.depart} → ${a.arrivee}</div>
+      <div class="annonce-desc">${a.desc}</div>
+      ${a.photos && a.photos.length ? `<div class="annonce-photos">${a.photos.map(p=>`<img class="annonce-photo" src="${p}" onclick="openLightbox('${p}')">`).join('')}</div>` : ''}
+      <div class="annonce-details">
+        <span class="annonce-tag">📅 ${a.date}</span>
+        <span class="annonce-tag">🚗 ${a.vehicule}</span>
+        <span class="annonce-tag">💪 ${a.portage}</span>
+      </div>
+      <div class="annonce-prix">${a.prix} <small>proposé</small></div>
+      <div class="annonce-footer">
+        <div class="annonce-auteur">
+          <div class="annonce-avatar">${a.contact.split(' ').map(n=>n[0]).join('').substring(0,2)}</div>
+          ${a.contact}
+        </div>
+        <button class="btn-repondre" onclick="repondreAnnonce(${a.id})">✉️ Répondre</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+let annonceActive = null;
+
+function repondreAnnonce(id){
+  annonceActive = annonces.find(a=>a.id===id);
+  if(!annonceActive) return;
+  document.getElementById('modal-titre-annonce').textContent = '"'+annonceActive.titre+'" — '+annonceActive.contact;
+  // Afficher/masquer boutons selon données disponibles
+  const hasTel = annonceActive.tel && annonceActive.tel.length > 5;
+  const hasEmail = annonceActive.email && annonceActive.email.length > 3;
+  document.getElementById('modal-btn-tel').style.display = hasTel ? 'flex' : 'none';
+  document.getElementById('modal-btn-sms').style.display = hasTel ? 'flex' : 'none';
+  document.getElementById('modal-btn-whatsapp').style.display = hasTel ? 'flex' : 'none';
+  document.getElementById('modal-btn-email').style.display = hasEmail ? 'flex' : 'none';
+  if(hasTel) document.getElementById('modal-tel-label').textContent = annonceActive.tel;
+  if(hasEmail) document.getElementById('modal-email-label').textContent = annonceActive.email;
+  // Message pré-rempli
+  document.getElementById('modal-msg').value =
+    `Bonjour ${annonceActive.contact.split(' ')[0]},\n\nJ'ai vu votre annonce "${annonceActive.titre}" sur TransportBE.\nJe suis livreur indépendant disponible et je peux réaliser cette mission.\n\nMerci de me recontacter pour convenir des détails.`;
+  document.getElementById('modal-repondre').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function fermerModal(){
+  document.getElementById('modal-repondre').classList.remove('show');
+  document.body.style.overflow = '';
+  annonceActive = null;
+}
+
+function contactTel(){
+  if(!annonceActive?.tel) return;
+  window.location.href = 'tel:'+annonceActive.tel.replace(/\s/g,'');
+  fermerModal();
+}
+
+function contactSMS(){
+  if(!annonceActive?.tel) return;
+  const msg = encodeURIComponent(`Bonjour ${annonceActive.contact.split(' ')[0]}, j'ai vu votre annonce "${annonceActive.titre}" sur TransportBE. Je suis disponible, pouvez-vous me recontacter ?`);
+  window.location.href = `sms:${annonceActive.tel.replace(/\s/g,'')}?body=${msg}`;
+  fermerModal();
+}
+
+function contactWhatsApp(){
+  if(!annonceActive?.tel) return;
+  const num = annonceActive.tel.replace(/\s/g,'').replace('+','');
+  const msg = encodeURIComponent(`Bonjour ${annonceActive.contact.split(' ')[0]}, j'ai vu votre annonce "${annonceActive.titre}" sur TransportBE. Je suis livreur indépendant disponible pour cette mission !`);
+  window.open(`https://wa.me/${num}?text=${msg}`, '_blank');
+  fermerModal();
+}
+
+function contactEmail(){
+  if(!annonceActive?.email) return;
+  const sujet = encodeURIComponent(`Réponse à votre annonce TransportBE — ${annonceActive.titre}`);
+  const corps = encodeURIComponent(`Bonjour ${annonceActive.contact.split(' ')[0]},\n\nJ'ai vu votre annonce "${annonceActive.titre}" sur TransportBE.\n\nJe suis livreur indépendant et je suis disponible pour réaliser cette mission.\n\nVoici mes informations :\n- Véhicule : \n- Disponibilité : \n- Tarif : \n\nN'hésitez pas à me recontacter.\n\nCordialement`);
+  window.location.href = `mailto:${annonceActive.email}?subject=${sujet}&body=${corps}`;
+  fermerModal();
+}
+
+function envoyerMessage(){
+  const msg = document.getElementById('modal-msg').value;
+  const tel = document.getElementById('modal-mon-tel').value;
+  const nom = document.getElementById('modal-mon-nom').value;
+  if(!msg || !tel || !nom){ showToast('⚠️ Remplissez tous les champs'); return; }
+  // En production : envoi vers API/backend
+  showToast('✅ Message envoyé à '+annonceActive.contact+' !');
+  fermerModal();
+}
+
+// Fermer modal en cliquant dehors
+document.getElementById('modal-repondre').addEventListener('click', function(e){
+  if(e.target === this) fermerModal();
+});
+
+
+function submitAnnonce(){
+  const titre = document.getElementById('p-titre').value.trim();
+  const depart = document.getElementById('p-depart').value.trim();
+  const contact = document.getElementById('p-contact').value.trim();
+
+  // Validation avec mise en évidence des champs manquants
+  let erreurs = [];
+  if(!partCatSelected) erreurs.push('le type de mission (🛋️ Meuble, ♻️ Déchetterie...)');
+  if(!titre) erreurs.push('le titre de l\'annonce');
+  if(!depart) erreurs.push('la ville de départ');
+  if(!contact) erreurs.push('votre contact (tél ou email)');
+
+  if(erreurs.length > 0){
+    showToast('⚠️ Manque : '+erreurs[0]);
+    // Mettre en rouge les champs vides
+    if(!partCatSelected) document.getElementById('part-cat-select').style.border='2px solid #D32F2F';
+    if(!titre){ const el=document.getElementById('p-titre'); el.style.border='1.5px solid #D32F2F'; el.focus(); }
+    else if(!depart){ const el=document.getElementById('p-depart'); el.style.border='1.5px solid #D32F2F'; el.focus(); }
+    else if(!contact){ const el=document.getElementById('p-contact'); el.style.border='1.5px solid #D32F2F'; el.focus(); }
+    return;
+  }
+
+  // Réinitialiser styles d'erreur
+  ['p-titre','p-depart','p-contact'].forEach(id=>{
+    document.getElementById(id).style.border='';
+  });
+  document.getElementById('part-cat-select').style.border='';
+
+  const nouvelleAnnonce = {
+    id: Date.now(),
+    titre, cat: partCatSelected,
+    region: depart.includes(' ') ? depart : depart,
+    depart: depart,
+    arrivee: document.getElementById('p-arrivee').value.trim() || 'Même ville',
+    date: document.getElementById('p-date').value || 'Dès que possible',
+    prix: document.getElementById('p-prix').value.trim() || 'À négocier',
+    vehicule: document.getElementById('p-vehicule').value || 'Peu importe',
+    portage: document.getElementById('p-portage').value,
+    desc: document.getElementById('p-desc').value.trim(),
+    photos: [...uploadedPhotos],
+    contact,
+    tel: contact.includes('@') ? '' : contact,
+    email: contact.includes('@') ? contact : '',
+    urgent: false, heure: "À l'instant"
+  };
+
+  annonces.unshift(nouvelleAnnonce);
+  annoncesFiltered = [...annonces];
+  uploadedPhotos = [];
+  renderPhotoPreviews();
+  renderAnnonces();
+
+  // Reset formulaire
+  ['p-titre','p-depart','p-arrivee','p-contact','p-prix','p-desc'].forEach(id=>{
+    const el = document.getElementById(id); if(el) el.value='';
+  });
+  document.getElementById('p-date').value='';
+  document.getElementById('p-vehicule').value='';
+  document.getElementById('p-portage').value='Non, juste le transport';
+  document.querySelectorAll('.part-cat-option').forEach(o=>o.classList.remove('selected'));
+  partCatSelected = '';
+
+  togglePartForm();
+  showToast('✅ Annonce publiée ! Les livreurs vont vous contacter.');
+  document.getElementById('part-liste').scrollIntoView({behavior:'smooth'});
+}
+
+// ===== PHOTOS ANNONCES =====
+let uploadedPhotos = [];
+
+function handlePhotoUpload(e){
+  const files = Array.from(e.target.files);
+  files.slice(0, 5 - uploadedPhotos.length).forEach(file => {
+    const reader = new FileReader();
+    reader.onload = ev => {
+      uploadedPhotos.push(ev.target.result);
+      renderPhotoPreviews();
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function renderPhotoPreviews(){
+  const container = document.getElementById('photos-preview');
+  if(!container) return;
+  container.innerHTML = uploadedPhotos.map((src,i) => `
+    <div class="photo-thumb-wrap">
+      <img class="photo-thumb" src="${src}" onclick="openLightbox('${src}')">
+      <button class="photo-del" onclick="deletePhoto(${i})">✕</button>
+    </div>
+  `).join('');
+}
+
+function deletePhoto(i){
+  uploadedPhotos.splice(i,1);
+  renderPhotoPreviews();
+}
+
+function openLightbox(src){
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('show');
+}
+
+// ===== FACTURE =====
+let factLignes = [];
+let factNum = 1;
+
+function initFacture(){
+  // Date du jour
+  const today = new Date().toISOString().split('T')[0];
+  const echo = new Date(); echo.setDate(echo.getDate()+30);
+  const echoStr = echo.toISOString().split('T')[0];
+  document.getElementById('f-date').value = today;
+  document.getElementById('f-echeance').value = echoStr;
+  document.getElementById('f-num').value = 'FA-'+new Date().getFullYear()+'-001';
+  // Charger infos sauvegardées
+  const saved = JSON.parse(localStorage.getItem('tbe-fact-infos')||'{}');
+  if(saved.nom) document.getElementById('f-nom').value = saved.nom;
+  if(saved.adresse) document.getElementById('f-adresse').value = saved.adresse;
+  if(saved.tel) document.getElementById('f-tel').value = saved.tel;
+  if(saved.email) document.getElementById('f-email').value = saved.email;
+  if(saved.tva) document.getElementById('f-tva').value = saved.tva;
+  if(saved.iban) document.getElementById('f-iban').value = saved.iban;
+  // Lignes par défaut
+  factLignes = [
+    {desc:'Transport / livraison',qte:1,prix:0},
+    {desc:'Frais de manutention',qte:1,prix:0},
+  ];
+  renderLignes();
+  updatePreview();
+}
+
+function sauverInfos(){
+  localStorage.setItem('tbe-fact-infos', JSON.stringify({
+    nom: document.getElementById('f-nom').value,
+    adresse: document.getElementById('f-adresse').value,
+    tel: document.getElementById('f-tel').value,
+    email: document.getElementById('f-email').value,
+    tva: document.getElementById('f-tva').value,
+    iban: document.getElementById('f-iban').value,
+  }));
+}
+
+function ajouterLigne(){
+  factLignes.push({desc:'',qte:1,prix:0});
+  renderLignes();
+}
+
+function supprimerLigne(i){
+  factLignes.splice(i,1);
+  renderLignes();
+  updatePreview();
+}
+
+function renderLignes(){
+  const list = document.getElementById('fact-lignes-list');
+  list.innerHTML = factLignes.map((l,i)=>`
+    <div class="fact-ligne">
+      <input value="${l.desc}" placeholder="Ex: Livraison Bruxelles→Liège" oninput="factLignes[${i}].desc=this.value;updatePreview()">
+      <input type="number" value="${l.qte}" min="0.5" step="0.5" oninput="factLignes[${i}].qte=parseFloat(this.value)||0;updatePreview()" style="text-align:center">
+      <input type="number" value="${l.prix}" min="0" placeholder="0.00" oninput="factLignes[${i}].prix=parseFloat(this.value)||0;updatePreview()" style="text-align:right">
+      <div class="fact-ligne-total" id="lt-${i}">0,00 €</div>
+      <button class="btn-del-ligne" onclick="supprimerLigne(${i})">🗑</button>
+    </div>
+  `).join('');
+}
+
+function eur(n){ return n.toFixed(2).replace('.',',')+' €'; }
+
+function updatePreview(){
+  // Calculs
+  const subtotal = factLignes.reduce((s,l)=>s+(l.qte*l.prix),0);
+  factLignes.forEach((l,i)=>{
+    const el = document.getElementById('lt-'+i);
+    if(el) el.textContent = eur(l.qte*l.prix);
+  });
+  const tvaPct = parseFloat(document.getElementById('f-tva-pct').value)||0;
+  const tvaAmt = subtotal * tvaPct/100;
+  const km = parseFloat(document.getElementById('f-km').value)||0;
+  const kmAmt = km * 0.42;
+  const total = subtotal + tvaAmt + kmAmt;
+
+  // Totaux form
+  document.getElementById('f-subtotal').textContent = eur(subtotal);
+  document.getElementById('f-tva-montant').textContent = eur(tvaAmt);
+  document.getElementById('f-km-total').textContent = eur(kmAmt);
+  document.getElementById('f-total-ttc').textContent = eur(total);
+
+  // Preview
+  const nom = document.getElementById('f-nom').value;
+  const adresse = document.getElementById('f-adresse').value;
+  const tel = document.getElementById('f-tel').value;
+  const email = document.getElementById('f-email').value;
+  const tvaNum = document.getElementById('f-tva').value;
+  const iban = document.getElementById('f-iban').value;
+  const clientNom = document.getElementById('f-client-nom').value;
+  const clientAdresse = document.getElementById('f-client-adresse').value;
+  const clientEmail = document.getElementById('f-client-email').value;
+  const num = document.getElementById('f-num').value;
+  const date = document.getElementById('f-date').value;
+  const echeance = document.getElementById('f-echeance').value;
+  const note = document.getElementById('f-note').value;
+
+  document.getElementById('prev-nom').textContent = nom;
+  document.getElementById('prev-adresse').textContent = adresse;
+  document.getElementById('prev-contact').textContent = [tel,email].filter(Boolean).join(' — ');
+  document.getElementById('prev-tva-num').textContent = tvaNum ? 'TVA: '+tvaNum : '';
+  document.getElementById('prev-num').textContent = num ? 'N° '+num : 'N° —';
+  document.getElementById('prev-date').textContent = date ? new Date(date).toLocaleDateString('fr-BE') : '—';
+  document.getElementById('prev-echeance').textContent = echeance ? new Date(echeance).toLocaleDateString('fr-BE') : '—';
+  document.getElementById('prev-emetteur').innerHTML = [nom,adresse,tel,email,tvaNum].filter(Boolean).join('<br>');
+  document.getElementById('prev-client').innerHTML = [clientNom,clientAdresse,clientEmail].filter(Boolean).join('<br>');
+  document.getElementById('prev-lignes').innerHTML = factLignes.filter(l=>l.desc||l.prix).map(l=>`
+    <tr><td>${l.desc||'—'}</td><td>${l.qte}</td><td>${eur(l.prix)}</td><td>${eur(l.qte*l.prix)}</td></tr>
+  `).join('');
+  document.getElementById('prev-subtotal').textContent = eur(subtotal);
+  document.getElementById('prev-tva-label').textContent = 'TVA ('+tvaPct+'%)';
+  document.getElementById('prev-tva-val').textContent = eur(tvaAmt);
+  document.getElementById('prev-total').textContent = eur(total);
+  const kmRow = document.getElementById('prev-km-row');
+  if(km>0){ kmRow.style.display='flex'; document.getElementById('prev-km-label').textContent=km+'km × 0,42€'; document.getElementById('prev-km-val').textContent=eur(kmAmt); }
+  else kmRow.style.display='none';
+  document.getElementById('prev-iban').textContent = iban ? '💳 IBAN: '+iban : '';
+  document.getElementById('prev-note').textContent = note;
+  sauverInfos();
+}
+
+function imprimerFacture(){
+  window.print();
+}
+
+function nouvelleFacture(){
+  factLignes = [{desc:'Transport / livraison',qte:1,prix:0}];
+  const today = new Date().toISOString().split('T')[0];
+  const echo = new Date(); echo.setDate(echo.getDate()+30);
+  document.getElementById('f-date').value = today;
+  document.getElementById('f-echeance').value = echo.toISOString().split('T')[0];
+  factNum++;
+  document.getElementById('f-num').value = 'FA-'+new Date().getFullYear()+'-'+(factNum<10?'00'+factNum:factNum<100?'0'+factNum:factNum);
+  ['f-client-nom','f-client-adresse','f-client-email','f-note','f-km'].forEach(id=>{
+    const el = document.getElementById(id); if(el) el.value='';
+  });
+  renderLignes();
+  updatePreview();
+  showToast('📄 Nouvelle facture créée !');
+}
+
+// ===== INIT =====
 const saved=localStorage.getItem('tbe-user');
 if(saved){user=JSON.parse(saved);updateProfil();}
 filterCompanies();
 renderOffres();
+renderAnnonces();
+initFacture();
 </script>
 </body>
 </html>
